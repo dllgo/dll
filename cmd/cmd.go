@@ -88,9 +88,9 @@ func PkgName(args []string) string {
 		return ""
 	}
 	if len(args) > 1 {
-		return args[1]
+		return ToLowerCamel(args[1])
 	}
-	return args[0]
+	return ToLowerCamel(args[0])
 }
 
 /*
