@@ -27,7 +27,7 @@ func handlerCMD(c *cli.Context) {
 		fmt.Println("请输入 handler 名称")
 		return
 	}
-	filepath, _ := GetFilePath(PathArg(c.Args()), c.Args().First()+"Handler.go")
+	filepath, _ := GetFilePath(PathArg(c.Args()), StructName(c.Args())+"Handler.go")
 	WriteFile(filepath, handlerTemplate(c.Args()))
 	fmt.Printf("handler=%v \n", c.Args().First())
 }

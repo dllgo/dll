@@ -27,7 +27,7 @@ func serviceCMD(c *cli.Context) {
 		fmt.Println("请输入 service 名称")
 		return
 	}
-	filepath, _ := GetFilePath(PathArg(c.Args()), c.Args().First()+"Service.go")
+	filepath, _ := GetFilePath(PathArg(c.Args()), StructName(c.Args())+"Service.go")
 	WriteFile(filepath, serviceTemplate(c.Args()))
 	fmt.Printf("service=%v \n", c.Args())
 }

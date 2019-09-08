@@ -27,7 +27,7 @@ func protoCMD(c *cli.Context) {
 		fmt.Println("请输入 proto 名称")
 		return
 	}
-	filepath, _ := GetFilePath(PathArg(c.Args()), c.Args().First()+".proto")
+	filepath, _ := GetFilePath(PathArg(c.Args()), StructName(c.Args())+".proto")
 	WriteFile(filepath, protoTemplate(c.Args()))
 	fmt.Printf("proto=%v \n", c.Args())
 }

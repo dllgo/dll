@@ -25,7 +25,7 @@ func moduleCMD(c *cli.Context) {
 		fmt.Println("请输入 module 名称")
 		return
 	}
-	dir := "/" + StructName(c.Args()) + "/" + ToCamel(c.Args().First())
+	dir := "/" + StructName(c.Args()) + "/" + StructName(c.Args())
 	//handler
 	handlerpath, _ := GetFilePath(PathArg(c.Args()), dir+"Handler.go")
 	WriteFile(handlerpath, handlerTemplate(c.Args()))

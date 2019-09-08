@@ -27,7 +27,7 @@ func modelCMD(c *cli.Context) {
 		fmt.Println("请输入 model 名称")
 		return
 	}
-	filepath, _ := GetFilePath(PathArg(c.Args()), c.Args().First()+"Model.go")
+	filepath, _ := GetFilePath(PathArg(c.Args()), StructName(c.Args())+"Model.go")
 	WriteFile(filepath, modelTemplate(c.Args()))
 	fmt.Printf("model=%v \n", c.Args())
 }
