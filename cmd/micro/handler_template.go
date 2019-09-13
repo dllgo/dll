@@ -14,10 +14,13 @@ import (
 )
 
 type {{.Name}}Handler struct {
-	Client client.Client,
+	cli client.Client
 	iSrv dlldb.IServices
 }
 func New{{.Name}}Handler(cli client.Client) *{{.Name}}Handler {
+	if cli == nil {
+		cli = client.NewClient()
+	}
 	return &{{.Name}}Handler{
 		Client:cli,
 		iSrv:dlldb.NewServices(),
